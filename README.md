@@ -26,6 +26,7 @@ Dos:
    All are fine.
 4. **Resume capability** - user can return and continue from where they left off
 5. **Please play to your strengths** - if you feel that you are more front-end than backend lean into that and vice versa!
+6. **Commit screenshots** - commit some screenshots of how your application looks.
 
 Don'ts:
 
@@ -62,7 +63,8 @@ choices than what has been made in the `/backend` directory)
 2. Tell us how to set it up and run it so we can review it:
    1. Either write a `.txt`/`.md` file that tells us which invocations of `cargo run`, `npm run dev`, `yarn dev`, ... we have to use, or
    2. simply provide a `justfile`/`Makefile` for us.
-3. Send us a link to your fork on your github account!
+3. Add some screenshots showcasing the UI
+4. Send us a link to your fork on your Github account!
 
 ## GO GO GO! 🌶️🌶️🌶️
 
