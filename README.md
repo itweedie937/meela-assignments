@@ -1,73 +1,53 @@
-# Take-home task: Client Onboarding Form
+# Meela onboarding form
+A POC client intake form with partial submission and resume capabilities.
 
-## Background
+## Tech stack
+- **Frontend** React + TypeScript + Material UI components
+- **Backend** Python + FastAPI (Kept the Rust there as legacy code)
+- **Database** SQLite
 
-At Meela, we help match clients to therapists, but first clients need to complete comprehensive intake forms. These
-forms are complex with multiple sections and sensitive mental health questions requiring careful UX.
+## Prerequisites
+- Python 3.10+
+- Node 20+
 
-The forms can take some time to get through. The reality is that sometimes life will demand immediate attention from our
-users such that they do not complete the form in a single sitting and they would benefit from having a partial form
-submission to return to. And that is the crux of this task.
+## Setup
+### Backend
+```bash
+cd backend_python
+pip install fastapi uvicorn pydantic
+uvicorn main:app --reload
+```
+The backend will start on `http://127.0.0.1:8000`. A `meela.db` file will be created.
 
-## Objective
+### Frontend
+- Open a second terminal
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The frontend will start on `http://localhost:5173`.
 
-Build a _simple_ client intake form system that supports **partial form submission** with the ability to resume later.
-Like, really simple. Proof-of-concept level. Don't worry about edge-cases or validation. Visit [our
-site](https://app.meelahealth.com) and cherry pick a small amount of different questions that make up your form.
+## Testing
+1. Open the frontend in the browser
+2. Fill in some fields across one or more steps. Progress saves 1.5 seconds after a change is detected.
+3. Copy the URL (which includes a UUID in the parameters)
+4. Close the tab and then open a new one
+5. You should be back on the same step with the answers answered
 
-**The main goal**: A user should be able to fill out part of a form, save their progress, and return later to continue
-where they left off.
+## What I'd do with more time
+- **A proper completion screen**: I ran out of time and didn't prioritise this over the other screens. It would be quite simple, just text to say that it has been submitted.
+- **Visual confirmation when the progress has been saved**: Eg A loading symbol turning into a tick when upon save.
+- **Better error handling**: There are a few instances of this but a lot could be added.
+- **Validation**: I know this was deemed unnecessary, but if I was making this for real, this would be important.
+- Nicer mobile layout and better responsiveness overall -- would be nice to have consistency across all three forms in terms of size.
+- More colours!
 
-Dos:
+## Screenshots
+<img width="910" height="753" alt="Screenshot 2026-03-17 at 20 19 18" src="https://github.com/user-attachments/assets/c6336e07-e01f-4898-8892-0a725e446799" />
+<img width="701" height="785" alt="Screenshot 2026-03-17 at 20 19 43" src="https://github.com/user-attachments/assets/01b889a2-552a-444e-a911-d12387451fdd" />
+<img width="819" height="750" alt="Screenshot 2026-03-17 at 20 19 50" src="https://github.com/user-attachments/assets/b4516443-be2d-4cbe-aa2c-a48f41c78a1f" />
 
-1. **Fork our repo!**
-2. **Multi-step form** at least 3 questions.
-3. **Save progress** - user can save and exit at any point - this can happen automatically, using a timer, or a button.
-   All are fine.
-4. **Resume capability** - user can return and continue from where they left off
-5. **Please play to your strengths** - if you feel that you are more front-end than backend lean into that and vice versa!
-6. **Commit screenshots** - commit some screenshots of how your application looks.
 
-Don'ts:
 
-1. **No auth required** - having a UUID in a URL is super-good enough!
-2. **No versioning required** - don't worry about handling form schema changes.
-3. **No i18n!** - overkill!
 
-**Time Estimate:** spend _max_ 4-6 hours, please.
-
-If you do not finish in this time, stop! We can talk about what you did manage to accomplish in that time!
-
-## Technology Stack
-
-**Frontend**: Use React or Solid.js (your choice)
-
-**Backend**: Feel free to use the provided Rust code in the `/backend` directory - or butcher it and take what you need.
-We do take into account your prior experience with Rust so if you don't have any: do not worry, we will adapt our
-evaluation accordingly.
-
-**Database**: Must use a database (relational or NoSQL - your choice really and then you might have to make some other
-choices than what has been made in the `/backend` directory)
-
-**API**: GraphQL or REST (your choice)
-
-**Requirements**:
-
-- Frontend must communicate with a backend
-- Backend must persist data to a database
-  - That means you should **not** save the partial submissions using `localStorage` in the browser!
-
-## Deliverables
-
-1. Make the thing work
-2. Tell us how to set it up and run it so we can review it:
-   1. Either write a `.txt`/`.md` file that tells us which invocations of `cargo run`, `npm run dev`, `yarn dev`, ... we have to use, or
-   2. simply provide a `justfile`/`Makefile` for us.
-3. Add some screenshots showcasing the UI
-4. Send us a link to your fork on your Github account!
-
-## GO GO GO! 🌶️🌶️🌶️
-
-**Remember**, focus on the core "resume" functionality - that is what we are evaluating. And again, please play to your strengths. If you
-feel that you are more front-end than backend lean into that and vice versa. Feel free to leave a little note in your fork about which
-one you decided to put more effort into to make it easier for us when reviewing. We look forward to catching up and reviewing your submission!
