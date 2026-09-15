@@ -8,16 +8,11 @@ A POC client intake form with partial submission and resume capabilities.
 
 ## Prerequisites
 - Python 3.10+
-- Node 20+
+- Node 22.12+
 
 ## Setup
 ### Backend
-```bash
-cd backend_python
-pip install fastapi uvicorn pydantic
-uvicorn main:app --reload
-```
-The backend will start on `http://127.0.0.1:8000`. A `meela.db` file will be created.
+Follow the README instructions in the `backend` directory.
 
 ### Frontend
 - Open a second terminal
