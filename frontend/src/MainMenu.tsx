@@ -9,7 +9,7 @@ import TherapistPreferences from "./components/TherapistPreferences"
 
 const STEPS = ["About me", "What you're looking for", "Your therapist"]
 
-const API = "http://127.0.0.1:8000"
+const API = "http://127.0.0.1:3005"
 
 export default function MainMenu() {
 	const [currentStep, setCurrentStep] = useState(0);
